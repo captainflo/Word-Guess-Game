@@ -10,7 +10,7 @@ var userChoiceText = document.getElementById("userchoice-text");
 var computerChoiceText = document.getElementById("computer-text");
 var winText = document.getElementById("winText");
 var looseText = document.getElementById("looseText");
-var looseText = document.getElementById("roundText");
+var roundText = document.getElementById("roundText");
 
 
     document.onkeyup = function(event){
@@ -30,17 +30,23 @@ var looseText = document.getElementById("roundText");
         }
         else{
             if (win > loose ){
-                alert("end of the game you have win " + win + " times"); 
+                alert("End of the game you have win " + win + " times");
+                round = 0;
+                win = 0;
+                loose = 0;
             }
             else{
-                alert("end of the game you have loose " + loose + " times"); 
+                alert("End of the game you have lost " + loose + " times");
+                round = 0;
+                win = 0;
+                loose = 0;
             }
         }
-        welcome.textContent = ""
+ 
         userChoiceText.textContent = "You choose: " + userChoice;
         computerChoiceText.textContent = "Computer: " + computerChoice;
         winText.textContent = "Wins: " + win;
-        looseText.textContent = "Wins: " + loose;
+        looseText.textContent = "loose: " + loose;
         roundText.textContent = "round: " + round;
 
     };
